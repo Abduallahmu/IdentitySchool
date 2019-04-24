@@ -1,0 +1,18 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "AddStudentToCourse";
+}
+
+<h1>Add Student To Course</h1>
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>
+                @Html.ActionLink("Add", "AddStudentToCourseSave", new { cId = ViewBag.cId , sId = item.Id })
+            </td>
+        </tr>
+    }
+</table>
